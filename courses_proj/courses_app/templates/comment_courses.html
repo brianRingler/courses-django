@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/comment_courses.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/comment_footer.css' %}" />
+    <title>Comments-Ratings</title>
+{% endblock head %} 
+
+{% block content %}
+
+<div class="comm-rate-wrapper">
+    <form action="/courses/comment/{{ id_comm }}/" method="POST" name="comment-frm">
+        <h1 class="comm-title">Comment and Rating - {{ course_name.course_name }}</h1>
+        {% csrf_token %}
+        <div>
+            <label for="course-rating">Rating:</label>
+            <select name="course-rating-nm" id="rate-course">
+                <option name="course-rating-nm" value="0"></option>
+                <option name="course-rating-nm" value="1">⭐</option>
+                <option name="course-rating-nm" value="2">⭐⭐</option>
+                <option name="course-rating-nm" value="3">⭐⭐⭐</option>
+                <option name="course-rating-nm" value="4">⭐⭐⭐⭐</option>
+                <option name="course-rating-nm" value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <!-- <input type="text" id="course-rating" name="course-rating-nm"> -->
+        </div>
+        <div id="comm-desc-sec">
+            <label for="course-comm">Comment:</label>
+            <textarea id="course-comm" name="course-comm-nm"></textarea>
+        </div>
+        <input type="submit" id="course-comm-submit">
+    </form>
+
+    <table class="courses-tbl">
+        <thead>
+            <tr>
+                <th>Comment</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for all in all_comm_rate %}
+            <tr>
+                <td>{{ all.comment }}</td>
+                <td>{{ all.rating }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px dotted rgb(234, 0, 255); */
+}
+
+body {
+    /* position: relative; */
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #080A0C;
+    color: #F3F4F6;
+}
+
+
+/*  Buttons */
+input[type="submit"],
+button {   
+    height: 2.25rem;
+    width: 6rem;
+    font-size: 1.0rem;
+    border-radius: 5px;
+    background-color:rgb(0, 145, 234);
+    color: white;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    cursor: pointer;
+    color: rgb(0, 72, 136);
+}
+
+#delete-btn {
+    width: 250px;
+    background-color: rgb(197, 67, 44);
+    margin-left: 25px;
+}

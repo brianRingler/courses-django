@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px dotted rgb(234, 0, 255); */
+}
+
+/* Error message from Django*/
+.error-msgs {
+    position: absolute;
+    top: 275px;
+    right: 185px;
+}
+
+.error-msgs > li {
+    background-color: white;
+    padding: 10px 10px;
+    color: red;
+}
+
+.courses-wrapper  {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+form {
+    margin-top: 85px;
+    padding: 10px 10px 15px 15px;
+    border: .5px solid rgba(245, 245, 245, 0.35);
+    background-color: #15181C;
+    border-radius: 5px;
+}
+
+h1 {
+    margin: auto;
+    font-size: 35px;
+}
+
+/* Common between tabs */
+label {
+    font-size: 27px;
+}
+
+/* Input fields */
+input[type="text"],
+textarea  {
+    border-radius: 10px;
+    padding: 6px 12px;
+    height: 1.8rem;
+    width: 500px;
+    font-size: 1.0rem;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    margin-bottom: 25px;
+  }
+  
+  input[type="text"]:focus, 
+  textarea:focus {
+    background-color: rgba(204,230,255,1);
+    box-shadow: 5px -5px 5px #555 inset;
+  }
+
+  /* modify the date and text area size */
+
+  textarea {
+    width: 500px;
+    height: 85px;
+    margin-left: 15px;
+}
+
+#course-name {
+    margin-left: 75px;
+}
+
+#desc-sec {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}
+
+#course-submit {
+    margin-left: 575px;
+}
+
+table {
+    width: auto;
+    table-layout: auto;
+    margin-top: 45px;
+    font-size: 20px;
+    border-collapse: separate;
+    border-spacing: 0px;
+  }
+
+th {
+      font-size: 22px;
+      margin: 0 10px 0 10px;
+      background-color: #15181C;
+  }
+
+ td {
+     padding: 5px 65px;
+     font-size: 17px;
+     max-width: 600px;
+ }
+
+ td:nth-child(1){
+     padding: 5px 10px;
+ }
+
+ td:nth-child(2),
+ td:nth-child(4),
+ td:nth-child(5),
+ td:nth-child(6){
+    padding: 5px 20px;
+}
+
+ tr:nth-child(even) {
+    background-color: #15181C;
+  }
+
+  tr:hover {
+    background-color: rgba(0, 144, 234, 0.438);
+    color: #F3F4F6;
+  }
+
+  a, span {
+      text-decoration: none;
+      color: rgb(0, 145, 234);
+  }
+

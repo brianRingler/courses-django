@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/add_courses.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/add_footer.css' %}" />
+    <title>Courses</title>
+{% endblock head %} 
+
+{% block content %}
+<div class="courses-wrapper">
+    <ul class="error-msgs">
+        {% if messages %}
+            {% for message in messages %}
+                <li {% if message.tags %} class"{{message.tags}}"{% endif %}>{{message}}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+    <form action="/courses/" method="POST" name="add-course-frm" id="addCourseID">
+        <h1 class="title">Add New Course</h1>
+        {% csrf_token %}
+        <div>
+            <label for="course-name">Name:</label>
+            <input type="text" id="course-name" name="course-name-nm">
+        </div>
+        <div id="desc-sec">
+            <label for="course-desc">Description:</label>
+            <textarea id="course-desc" name="course-desc-nm"></textarea>
+        </div>
+        <input type="submit" id="course-submit">
+    </form>
+
+    <table class="courses-tbl">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Course Description</th>
+                <th>Avg. Rating</th>
+                <th>Date Added</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+                <tr>
+                    <td>{{ course.id }}</td>
+                    <td>{{ course.course_name }}</td>
+                    <td>{{ course.description }}</td>
+                    <td>{{ course.id }}</td>
+                    <td>{{ course.created_at }}</td>
+                    <td>
+                        <a class="act" href="comment/{{ course.id }}">Comment</a>
+                        <span> | </span>
+                        <a class="act" href="delete/{{ course.id }}">Remove</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- <script src="{% static 'js/addCourses.js' %}"></script> -->
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <title>🏡 Home</title>
+{% endblock head %} 
+
+
+{% block content %}
+
+<div class="wrapper-index">   
+    <h1 class="welcome-index">Course Maintenance</h1>
+</div>
+
+<div class="about-cards-main">
+    <div class="cards">
+        <P>The Course Maintenance site will allow users to add/delete course for hte upcoming FY. Select Modify Course to get started. Hopefully, you find it easy to use. If not, please provide feedback.</P>
+    </div>
+    <div class="cards">
+        <P>A lot of the popular courses this year are technology related. Take a look at these and pick a couple that you like</P>
+    </div>
+    <div class="cards">
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore molestias commodi eaque architecto quas doloremque unde ipsam cumque autem. Ipsum repellendus accusantium nam labore nesciunt ea quidem nemo quia dicta!</P>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px dotted rgb(234, 0, 255); */
+}
+
+form  {
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 125px;
+    width: 665px;
+
+    padding: 10px 10px 15px 15px;
+    border: .5px solid rgba(245, 245, 245, 0.35);
+    background-color: #15181C;
+    border-radius: 5px;
+}
+
+.name-desc {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}
+
+h2, h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-left: 10px;
+    font-size: 19px;
+}
+
+.delete-btns {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 700px;
+}
+
+button > a { 
+    color: white;
+}
+

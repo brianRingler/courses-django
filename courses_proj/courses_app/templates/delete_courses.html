@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/delete_courses.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <title>❌ Delete</title>
+{% endblock head %} 
+ 
+{% block content %}
+<form action="/courses/delete/{{ course.id }}/" method="POST" name="delete-frm">
+    {% csrf_token %}
+    <h2>Are you sure you want to delete the following course?</h2>
+    <div class="name-desc">
+        <h3>Name:</h3>
+        <p>{{ course.course_name }}</p>
+    </div>
+    <div class="name-desc">
+        <h3>Description:</h3>
+        <p>{{ course.description.course_desc }}</p>
+    </div>
+    <div class="delete-btns">
+        <button><a href="{% url 'add_courses' %}">No</a></button>
+        <input type="submit" id="delete-btn" value="Yes! I want to delete this">
+    </div>
+</form>
+
+{% endblock %}
