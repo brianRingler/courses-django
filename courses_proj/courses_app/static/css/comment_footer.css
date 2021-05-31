@@ -6,8 +6,9 @@
 }
 
 .wrapper-footer {
-    position: sticky;
-    bottom: 0;
+    position: fixed;
+    background-attachment: scroll;
+    bottom: 0pt;
     width: 100%;
 }
 

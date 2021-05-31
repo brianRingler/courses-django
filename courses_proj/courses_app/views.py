@@ -48,9 +48,16 @@ def add_courses_view(request):
     
     # GET request pass data    
     context =   {
-                'courses' : Course.objects.all(),
-                'avg_rating' : Course.objects.values('id').annotate(Avg('course_name_fk__rating'))
+                # 'courses' : Course.objects.all(),
+                'courses' : Course.objects.all().annotate(Avg('course_name_fk__rating'))
             }
+    avg_ratings = Course.objects.values('id').annotate(Avg('course_name_fk__rating'))
+    avg = Course.objects.all().annotate(Avg('course_name_fk__rating'))
+    print(type(avg))
+    print(avg)
+    print('----------------')
+    for a in avg:
+        print(a)
 
     return render(request, 'add_courses.html', context)
 

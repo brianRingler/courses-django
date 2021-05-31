@@ -7,7 +7,7 @@
 
 
 .wrapper-navbar {
-    position: absolute;
+    position: sticky;
     top: 0px;
     background-color: #15181C;
     width: 100%;

@@ -7,10 +7,12 @@
 
 .wrapper-footer {
     /* use add sticky to keep footer bottom */
-    position: sticky;
+    position: fixed;
+    background-attachment: scroll;
     margin-top: 20px;
     bottom: 0;
     width: 100%;
+    
 }
 
 .footer-main {
