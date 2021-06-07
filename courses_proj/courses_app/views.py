@@ -22,8 +22,8 @@ def add_courses_view(request):
                 # v is error msg can also pass k which is input name
                 messages.error(request, v)
 
-            return JsonResponse(errors, status=200)  
-            # return redirect('/courses')
+            # return JsonResponse(errors, status=200)  
+            return redirect('/courses')
 
 
         Course.objects.create(
@@ -51,8 +51,9 @@ def add_courses_view(request):
                 # 'courses' : Course.objects.all(),
                 'courses' : Course.objects.all().annotate(Avg('course_name_fk__rating'))
             }
-    avg_ratings = Course.objects.values('id').annotate(Avg('course_name_fk__rating'))
-    avg = Course.objects.all().annotate(Avg('course_name_fk__rating'))
+    avg = Course.objects.values('id').annotate(Avg('course_name_fk__rating'))
+    # avg = Course.objects.all().annotate(Avg('course_name_fk__rating'))
+    print('+++++++++++++++++++++++++++++++++')
     print(type(avg))
     print(avg)
     print('----------------')
